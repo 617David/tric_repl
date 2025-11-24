@@ -1,0 +1,139 @@
+.settlement-view {
+  max-width: 800px;
+}
+
+.settlements-section {
+  margin-bottom: 3rem;
+}
+
+.settlements-section h3,
+.balances-section h3 {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+  color: #1e293b;
+}
+
+.all-settled {
+  padding: 2rem;
+  background: #d1fae5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.all-settled p {
+  margin: 0;
+  color: #065f46;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.settlement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settlement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.settlement-item:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  transform: translateX(4px);
+}
+
+.settlement-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.settlement-from {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.settlement-arrow {
+  color: #667eea;
+  font-size: 1.25rem;
+}
+
+.settlement-to {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.settlement-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.balance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.balance-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.balance-amount {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.balance-amount.positive {
+  color: #059669;
+}
+
+.balance-amount.negative {
+  color: #dc2626;
+}
+
+.balance-amount.neutral {
+  color: #64748b;
+}
+
+.balance-legend {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.balance-legend p {
+  margin: 0.25rem 0;
+}
+
+.positive-indicator {
+  color: #059669;
+  font-weight: 600;
+}
+
+.negative-indicator {
+  color: #dc2626;
+  font-weight: 600;
+}

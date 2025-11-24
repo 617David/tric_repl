@@ -1,0 +1,59 @@
+.participant-manager {
+  max-width: 600px;
+}
+
+.add-participant-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.participant-input {
+  flex: 1;
+  padding: 0.625rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.participant-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.participant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.participant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.participant-item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.participant-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.btn-remove {
+  color: #ef4444;
+  font-size: 1.5rem;
+}
+
+.btn-remove:hover {
+  color: #dc2626;
+}
