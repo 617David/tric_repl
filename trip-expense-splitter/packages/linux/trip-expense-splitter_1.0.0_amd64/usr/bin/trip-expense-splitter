@@ -1,0 +1,43 @@
+#!/bin/bash
+# Trip Expense Splitter Launcher
+
+APP_DIR="/opt/trip-expense-splitter"
+INDEX_FILE="$APP_DIR/index.html"
+
+# Check if the app is already running (simple check via port)
+PORT=8765
+
+# Function to start local server
+start_server() {
+    cd "$APP_DIR"
+    python3 -m http.server $PORT > /dev/null 2>&1 &
+    SERVER_PID=$!
+    echo $SERVER_PID > /tmp/trip-expense-splitter.pid
+    sleep 1
+}
+
+# Function to open browser
+open_browser() {
+    xdg-open "http://localhost:$PORT" > /dev/null 2>&1
+}
+
+# Check if server is already running
+if [ -f /tmp/trip-expense-splitter.pid ]; then
+    PID=$(cat /tmp/trip-expense-splitter.pid)
+    if ps -p $PID > /dev/null 2>&1; then
+        # Server already running, just open browser
+        open_browser
+        exit 0
+    else
+        # PID file exists but process is dead, clean up
+        rm /tmp/trip-expense-splitter.pid
+    fi
+fi
+
+# Start server and open browser
+start_server
+open_browser
+
+echo "Trip Expense Splitter is running at http://localhost:$PORT"
+echo "Close the browser tab when done. The server will keep running in background."
+echo "To stop the server, run: kill \$(cat /tmp/trip-expense-splitter.pid)"

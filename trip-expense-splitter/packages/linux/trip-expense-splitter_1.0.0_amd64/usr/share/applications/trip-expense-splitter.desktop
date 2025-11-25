@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Trip Expense Splitter
+Comment=Split trip expenses fairly among participants
+Exec=/usr/bin/trip-expense-splitter
+Icon=accessories-calculator
+Terminal=false
+Categories=Office;Finance;Utility;
+Keywords=expense;split;money;trip;finance;

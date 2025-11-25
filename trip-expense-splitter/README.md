@@ -2,6 +2,23 @@
 
 A local-first web application for splitting trip expenses fairly among participants. This is a Tricount replacement that runs entirely in your browser with no accounts needed.
 
+## 📦 Download & Install
+
+Pre-built packages are available for easy installation:
+
+- **Linux (Debian/Ubuntu)**: Install the `.deb` package from `packages/trip-expense-splitter_1.0.0_amd64.deb`
+  ```bash
+  sudo dpkg -i packages/trip-expense-splitter_1.0.0_amd64.deb
+  ```
+
+- **Windows**: Extract the portable ZIP from `packages/windows/trip-expense-splitter-windows-portable.zip` and run `launch.vbs`
+
+- **Android**: Build instructions available in [BUILD_ANDROID.md](./BUILD_ANDROID.md)
+
+- **Any platform**: Run directly in your browser - see [Getting Started](#getting-started) below
+
+For detailed installation instructions, see [DISTRIBUTION.md](./DISTRIBUTION.md)
+
 ## Features
 
 - **Trip Management**: Create multiple trips to organize expenses by event (weekend trips, gifts, group dinners, etc.)

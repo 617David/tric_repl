@@ -1,0 +1,14 @@
+Package: trip-expense-splitter
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: User <user@example.com>
+Description: Trip Expense Splitter - Local expense sharing app
+ A local-first web application for splitting trip expenses fairly among
+ participants. This is a Tricount replacement that runs entirely in your
+ browser with no accounts needed.
+ .
+ Features include trip management, flexible expense splitting with three
+ distribution methods, and smart settlement calculations.
+Depends: xdg-utils
