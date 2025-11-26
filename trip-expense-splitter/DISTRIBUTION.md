@@ -36,7 +36,44 @@ sudo dpkg -r trip-expense-splitter
 
 ---
 
-### 2. Windows (Portable ZIP)
+### 2. Linux (AppImage)
+
+**Location:** `packages/TripExpenseSplitter-x86_64.AppImage`
+
+**Installation:**
+No installation needed! Just make it executable and run:
+```bash
+chmod +x packages/TripExpenseSplitter-x86_64.AppImage
+./packages/TripExpenseSplitter-x86_64.AppImage
+```
+
+**Usage:**
+- Double-click the AppImage file (if your file manager supports it)
+- Or run from terminal: `./TripExpenseSplitter-x86_64.AppImage`
+- The app will automatically start a local server and open in your browser
+
+**How it works:**
+- Self-contained executable - no installation required
+- Extracts to /tmp on first run
+- Starts a local Python HTTP server on a dynamic port
+- Opens the app in your default web browser
+- Server continues running in background for quick access
+
+**Advantages:**
+- ✅ Works on any Linux distribution (Ubuntu, Mint, Fedora, Arch, etc.)
+- ✅ No root/sudo required
+- ✅ No system-wide installation
+- ✅ Fully portable - run from USB drive or any location
+- ✅ Single file - easy to distribute
+
+**Requirements:**
+- Any Linux distribution (x86_64)
+- Python 3 (usually pre-installed)
+- xdg-utils or web browser
+
+---
+
+### 3. Windows (Portable ZIP)
 
 **Location:** `packages/windows/trip-expense-splitter-windows-portable.zip`
 
@@ -62,7 +99,7 @@ sudo dpkg -r trip-expense-splitter
 
 ---
 
-### 3. Android (.apk)
+### 4. Android (.apk)
 
 **Status:** Android project is configured, APK needs to be built on a system with internet access.
 
@@ -120,14 +157,16 @@ Open http://localhost:8080
 
 ## Package Comparison
 
-| Feature | Linux .deb | Windows ZIP | Android APK | Web |
-|---------|-----------|-------------|-------------|-----|
-| Installation | System-wide | Portable | Install APK | None |
-| Updates | Manual reinstall | Manual replace | Manual reinstall | Refresh browser |
-| Desktop Icon | Yes | Manual | Yes | Bookmark |
-| Offline Use | Yes* | Yes | Yes | Yes* |
-| Data Storage | Browser localStorage | Browser localStorage | Android storage | Browser localStorage |
-| File Size | ~210 KB | ~210 KB | ~5-10 MB | ~210 KB |
+| Feature | Linux .deb | Linux AppImage | Windows ZIP | Android APK | Web |
+|---------|-----------|----------------|-------------|-------------|-----|
+| Installation | System-wide | None (portable) | Portable | Install APK | None |
+| Root Required | Yes | No | No | No | No |
+| Updates | Manual reinstall | Replace file | Manual replace | Manual reinstall | Refresh browser |
+| Desktop Icon | Yes | Manual | Manual | Yes | Bookmark |
+| Offline Use | Yes* | Yes* | Yes | Yes | Yes* |
+| Data Storage | Browser localStorage | Browser localStorage | Browser localStorage | Android storage | Browser localStorage |
+| File Size | ~63 KB | ~69 KB | ~70 KB | ~5-10 MB | ~210 KB |
+| Works on all Linux | Debian/Ubuntu | Yes | N/A | N/A | Yes |
 
 \* Requires initial online access to load, then works offline
 

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Trip Expense Splitter
+Comment=Split trip expenses fairly among participants
+Exec=AppRun
+Icon=trip-expense-splitter
+Categories=Office;Finance;
+Terminal=false

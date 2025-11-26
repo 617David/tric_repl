@@ -1,0 +1,60 @@
+#!/bin/bash
+# Trip Expense Splitter AppImage Launcher
+
+# Get the directory where this AppImage is located
+APPDIR="$(dirname "$(readlink -f "$0")")"
+APP_FILES="$APPDIR/usr/share/app"
+
+# Set a unique port based on user
+PORT=18765
+
+# Function to find an available port
+find_free_port() {
+    local port=$PORT
+    while nc -z localhost $port 2>/dev/null; do
+        port=$((port + 1))
+    done
+    echo $port
+}
+
+# Find a free port
+FREE_PORT=$(find_free_port)
+
+# Check if server is already running
+PID_FILE="$HOME/.cache/trip-expense-splitter.pid"
+if [ -f "$PID_FILE" ]; then
+    OLD_PID=$(cat "$PID_FILE")
+    if ps -p $OLD_PID > /dev/null 2>&1; then
+        # Server already running, just open browser
+        xdg-open "http://localhost:$(cat "$HOME/.cache/trip-expense-splitter.port" 2>/dev/null || echo $PORT)" 2>/dev/null || \
+        python3 -m webbrowser "http://localhost:$(cat "$HOME/.cache/trip-expense-splitter.port" 2>/dev/null || echo $PORT)"
+        exit 0
+    else
+        # Stale PID file, remove it
+        rm -f "$PID_FILE"
+    fi
+fi
+
+# Start HTTP server in background
+cd "$APP_FILES"
+python3 -m http.server $FREE_PORT > /dev/null 2>&1 &
+SERVER_PID=$!
+
+# Save PID and port
+mkdir -p "$HOME/.cache"
+echo $SERVER_PID > "$PID_FILE"
+echo $FREE_PORT > "$HOME/.cache/trip-expense-splitter.port"
+
+# Give server a moment to start
+sleep 1
+
+# Open browser
+xdg-open "http://localhost:$FREE_PORT" 2>/dev/null || \
+python3 -m webbrowser "http://localhost:$FREE_PORT"
+
+# Show message
+echo "Trip Expense Splitter is running at http://localhost:$FREE_PORT"
+echo "Server PID: $SERVER_PID"
+echo ""
+echo "To stop the server, run: kill $SERVER_PID"
+echo "Or: kill \$(cat $PID_FILE)"

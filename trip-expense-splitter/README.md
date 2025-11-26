@@ -6,7 +6,14 @@ A local-first web application for splitting trip expenses fairly among participa
 
 Pre-built packages are available for easy installation:
 
-- **Linux (Debian/Ubuntu)**: Install the `.deb` package from `packages/trip-expense-splitter_1.0.0_amd64.deb`
+- **Linux (AppImage - Recommended)**: Download `packages/TripExpenseSplitter-x86_64.AppImage`
+  ```bash
+  chmod +x packages/TripExpenseSplitter-x86_64.AppImage
+  ./packages/TripExpenseSplitter-x86_64.AppImage
+  ```
+  Works on all Linux distributions, no installation required!
+
+- **Linux (Debian/Ubuntu .deb)**: Install the `.deb` package from `packages/trip-expense-splitter_1.0.0_amd64.deb`
   ```bash
   sudo dpkg -i packages/trip-expense-splitter_1.0.0_amd64.deb
   ```
